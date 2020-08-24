@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  breed: MyString
+  birth_date: 2020-08-23
+  client: one
+
+two:
+  name: MyString
+  breed: MyString
+  birth_date: 2020-08-23
+  client: two

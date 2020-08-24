@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @client.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @client.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @client.email %>
+</p>
+
+
+
+<h2><%=@client.name%>'s pets</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Max Weight</th>
+      <th>Max Height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%n=0%>
+    <%@pets.each do |pet|%>
+      <tr>
+        <td><%= n+=1 %></td>
+        <td><%= pet.name %></td>
+        <%= render :partial => 'partial':locals => { :pet => @pet } %>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>
+
