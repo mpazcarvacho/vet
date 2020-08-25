@@ -10,11 +10,7 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
-    @pets = @client.pets
-    # @pet_histories = @pet_histories.where(pet: @pets.ids)
-    # @max_w = @pet_histories.maximum(:weight)
-    # @max_h = @pet_histories.maximum(:height)
-    
+    @pets = Pet.where(client: @client.id)
   end
 
   # GET /clients/new
@@ -75,5 +71,7 @@ class ClientsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def client_params
       params.require(:client).permit(:name, :phone, :email)
+      # apartments_attributes:[:id,
+      #   :number, :sale_price, :_destroy]
     end
 end

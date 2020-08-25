@@ -7,11 +7,6 @@ class PetsController < ApplicationController
     @pets = Pet.all
   end
 
-  def partial
-    @pet_histories = @pet.pet_histories
-    @max_weight = @pet_histories.maximum(:weight)
-    @max_height = @pet_histories.maximum(:height)
-  end
   # GET /pets/1
   # GET /pets/1.json
   def show
@@ -20,6 +15,12 @@ class PetsController < ApplicationController
     @max_height = @pet_histories.maximum(:height)
     @average_weight = @pet_histories.average(:weight)
     @average_height = @pet_histories.average(:height)
+  end
+  
+  def _stats
+    @pet_histories = @pet.pet_histories
+    @max_weight = @pet_histories.maximum(:weight)
+    @max_height = @pet_histories.maximum(:height)
   end
 
   # GET /pets/new

@@ -13,7 +13,7 @@ accepts_nested_attributes_for :pets, :pet_histories
   end
 
   def pet_maximum_weight
-    pets.where(id: params[:pet]).pet_histories.maximum(:weight)
+    pet_histories.count
   end
 
   def pet_maximum_height
